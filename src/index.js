@@ -3,6 +3,6 @@ import './styles/style.css';
 import './styles/style.scss';
 import './styles/style.sass';
 
-import face from './scripts/face'
+// import face from './scripts/face'
+import population from './scripts/population'
 
-face
