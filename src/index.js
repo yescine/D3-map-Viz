@@ -4,5 +4,6 @@ import './styles/style.scss';
 import './styles/style.sass';
 
 // import face from './scripts/face'
-import population from './scripts/population'
+// import population from './scripts/population'
+import map from './scripts/map'
 
