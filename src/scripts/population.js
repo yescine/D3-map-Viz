@@ -4,7 +4,7 @@ import { axisBottom, axisLeft } from 'd3'
 const svg = d3.select('.face')
 const heigth = +svg.attr('height')
 const width = +svg.attr('width')
-const margin = {top:0,bottom:40,left:40,right:40}
+const margin = {top:40,bottom:40,left:40,right:40}
 const innerWidth = width-margin.left -margin.right
 const innerHeight = heigth-margin.top -margin.bottom
 
@@ -33,7 +33,9 @@ const g = svg.append('g')
   .attr('transform',`translate(${margin.left},${margin.top})`)
 
 g.append('g').call(axisLeft(yScale))
-g.append('g').call(axisBottom(xScale))
+  // .selectAll('.domain, .tick line').remove()
+
+g.append('g').call(axisBottom(xScale).tickSize(-innerHeight))
   .attr('transform',`translate(${0},${innerHeight})`)
 
 g.selectAll('rect')
@@ -45,4 +47,6 @@ g.selectAll('rect')
   .attr('height',yScale.bandwidth())
   .attr('fill','steelblue')
 
-
+g.append('text')
+  .attr('y',-20)
+  .text('world population plot');
