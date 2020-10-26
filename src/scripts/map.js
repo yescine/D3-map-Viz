@@ -1,4 +1,8 @@
 import * as d3 from 'd3';
+import {
+  zoom,
+  event,
+} from 'd3';
 import {feature} from 'topojson'
 
 const svg = d3.select('.face')
@@ -15,8 +19,9 @@ g.append('path')
     .attr('class', 'sphere')
     .attr('d', pathGenerator({type: 'Sphere'}));
 
-svg.call(d3.zoom().on('zoom', () => {
-  g.attr('transform', d3.event.transform);
+svg.call(zoom().on('zoom', () => {
+  console.log(event)
+  g.attr('transform', event.transform);
 }));
 
   d3.tsv('https://unpkg.com/world-atlas@1.1.4/world/50m.tsv')

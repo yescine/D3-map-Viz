@@ -5,5 +5,7 @@ import './styles/style.sass';
 
 // import face from './scripts/face'
 // import population from './scripts/population'
-import map from './scripts/map'
+// import map from './scripts/map'
+import mapColored from './scripts/mapColored'
+
 
